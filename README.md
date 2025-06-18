@@ -19,4 +19,5 @@ omdb output
 
 It's an post method and users can pass the movie name as part of the body
 
+
 ![img_2.png](img_2.png)
