@@ -1,30 +1,55 @@
-# Spring AI
-This application is an demo working of spring AI
-It is using ollama and is running the model on the local system. It uses of the ollama model
-to randomly give out any movie name and the out put of AI is fed into another service which hits the omdb API to get all the information related to the movie
-Uses can search by giving movie title to get plot,genre etc about movie
+# 🎬 Spring AI Movie Recommender
 
-## AI Recommendation
-URL :-_movies/random_
+This is a demo application showcasing the integration of **Spring AI** with **Ollama**, running locally to generate AI-powered movie recommendations.  
+The application interacts with the **OMDb API** to fetch detailed information about the recommended movies.
 
-![img.png](img.png)
+---
 
-Above is the output of the recommendation from AI and this will be fed into omdb API to get whole details of the movie
+## 🚀 Features
 
-![img_1.png](img_1.png)
+### 🔹 AI-Powered Movie Suggestion
+- **Endpoint:** `GET /movies/random`
+- Uses a locally running **Ollama** model to generate random movie titles.
 
-omdb output
+### 🔹 Movie Details via OMDb API
+- **Endpoint:** `POST /movies/bytitle`
+- Accepts a movie title in the request body and returns complete movie details (plot, genre, year, etc.).
 
-URL :- _/movies/bytitle_
-## Search by title
+### 🔹 Genre-Based Recommendations
+- **Endpoint:** `GET /movies/recommend/bygenre`
+- Requires a `genre` parameter and returns a list of movies matching the genre.
 
-It's an post method and users can pass the movie name as part of the body
+---
 
+## 🖼️ Screenshots
 
-![img_2.png](img_2.png)
+### 🎲 AI Movie Recommendation Output
+> **Endpoint:** `/movies/random`
 
-## Recommend Based on Genre
-URL : - _/movies/recommend/bygenre_(Requires params)
+![AI Movie Recommendation](img.png)
 
-![img_3.png](img_3.png)
+The AI generates a random movie title, which is then passed to the OMDb API for further details.
 
+---
+
+### 🎬 OMDb Movie Details Output
+> **Endpoint:** `/movies/bytitle`
+
+![OMDb API Output](img_1.png)
+
+---
+
+### 🔍 Search by Movie Title
+> **Endpoint:** `/movies/bytitle` (POST)  
+> **Body Example:**
+```json
+{
+  "title": "Inception"
+}
+```
+
+### 🔍 Search by Movie Genre
+
+![OMDb API Output](img_3.png)
+
+AI will recommend an movie based on the input genre
