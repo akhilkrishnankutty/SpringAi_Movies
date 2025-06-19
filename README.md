@@ -15,9 +15,16 @@ Above is the output of the recommendation from AI and this will be fed into omdb
 
 omdb output
 
+URL :- _/movies/bytitle_
 ## Search by title
 
 It's an post method and users can pass the movie name as part of the body
 
 
 ![img_2.png](img_2.png)
+
+## Recommend Based on Genre
+URL : - _/movies/recommend/bygenre_(Requires params)
+
+![img_3.png](img_3.png)
+
